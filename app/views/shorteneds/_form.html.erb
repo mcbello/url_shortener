@@ -1,0 +1,27 @@
+<%= form_with(model: shortened, local: true) do |form| %>
+  <% if shortened.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shortened.errors.count, "error") %> prohibited this shortened from being saved:</h2>
+
+      <ul>
+      <% shortened.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :in_url %>
+    <%= form.text_area :in_url, id: :shortened_in_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :http_status %>
+    <%= form.number_field :http_status, id: :shortened_http_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

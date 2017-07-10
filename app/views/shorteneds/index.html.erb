@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shorteneds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>In url</th>
+      <th>Http status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shorteneds.each do |shortened| %>
+      <tr>
+        <td><%= shortened.in_url %></td>
+        <td><%= shortened.http_status %></td>
+        <td><%= link_to 'Show', "/shorteneds/#{shortened.short_url}" %></td>
+        <td><%= link_to 'Edit', edit_shortened_path(shortened) %></td>
+        <td><%= link_to 'Destroy', shortened, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shortened', new_shortened_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>In url:</strong>
+  <%= @shortened.in_url %>
+</p>
+
+<p>
+  <strong>Http status:</strong>
+  <%= @shortened.http_status %>
+</p>
+
+<%= link_to 'Edit', edit_shortened_path(@shortened) %> |
+<%= link_to 'Back', shorteneds_path %>
